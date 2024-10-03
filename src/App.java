@@ -2,8 +2,11 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        //Instancia metodo inserccion y clase scanner
+        inserccion metodo= new inserccion();
         Scanner leer = new Scanner(System.in);
         int tamaño ;
+        boolean pasos;
         System.out.println("De que tamaño desea el arreglo");
         tamaño= leer.nextInt();
         int[]arreglo = new int[tamaño];
@@ -16,5 +19,15 @@ public class App {
         System.out.println("Desea ordenar con pasos ");
         System.out.println("1)SI");
         System.out.println("2)NO");
+        int decision= leer.nextInt();
+        if (decision==1){
+            pasos=true;
+        }else{
+            pasos=false;
+        }
+        System.out.println("Arreglo sin ordenar" + java.util.Arrays.toString(arreglo));
+        metodo.inserccionMetodo(arreglo, pasos);
+
+
     }
 }
